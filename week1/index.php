@@ -19,7 +19,7 @@ and open the template in the editor.
 	
 	$fullname = $firstname . $lastname;
 	
-	echo $fullname;
+	echo $fullname . "<br/>";
 	
 	//B.
 	
@@ -208,7 +208,7 @@ and open the template in the editor.
 
 	//E. 
 	//No idea if this works or not, I can't really test right now because my environment isn't set up properly
-        /*
+        echo "<br/><br/><br/>";
 	$rows = 100; // define number of rows
 	$cols = 1;// define number of columns
 
@@ -224,18 +224,16 @@ and open the template in the editor.
 			echo "<tr bgcolor=#FFFFFF>";
 		}
 	        for($td=1;$td<=$cols;$td++){
-				//This didn't work for me and I can't test it properly...
-				//$date = new DateTime('2013-01-01', new DateTimeZone('America/New_York'));
-				$rightNow = getdate();
-	            echo "<td>row: ",$tr, $rightNow, "</td>"; 
+		//This didn't work for me and I can't test it properly...
+		//$date = new DateTime('2013-01-01', new DateTimeZone('America/New_York'));
+                //This works but it's an associative array and the key values are not posted. I'll fix it later.
+		$date = \time();
+	        echo "<td>row: ",$tr, $date, "</td>"; 
 	        } 
 	    echo "</tr>"; 
 	} 
 	 
 	echo "</table>"; 
-        
-         */
-
         ?>
     </body>
 </html>
