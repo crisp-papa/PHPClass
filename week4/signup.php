@@ -10,7 +10,7 @@ and open the template in the editor.
         <title></title>
         <style>
             form{
-                border: 3px outset grey;
+                border: 5px outset grey;
                 border-radius:5px;
                 width: 500px;
                 height:auto;
@@ -21,7 +21,6 @@ and open the template in the editor.
                 position:relative;
                 width: 500px;
                 margin:auto;
-                
             }
             
         </style>

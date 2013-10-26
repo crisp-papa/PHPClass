@@ -36,5 +36,26 @@ class Validator {
         } 
         return false;  
     }
+    
+    public static function loginIsValid($username, $password){
+        
+        $password = sha1($password);
+        
+        $db = new PDO(Config::DB_DNS, Config::DB_USER, Config::DB_PASSWORD);
+        
+        $stmt = $db->prepare('SELECT * FROM SIGNUP WHERE username = :usernameValue limit 1');
+        $stmt->bindParam(":usernameValue", $username, PDO::PARAM_STR);
+        $stmt->execute();
+        
+        $result = $stmt->fetchAll();
+        
+        if (count($result)){
+            if ($result[0]["password"] == $password)
+                return true;
+        }
+        return false;
+        
+        
+    }
 }
 
