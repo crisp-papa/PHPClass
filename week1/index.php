@@ -8,9 +8,21 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title></title>
+        <?php $color = array("red", "orange", "yellow", "green", "blue", "violet");?>
     </head>
-    <body>
+    <body style="background-color:
+        <?php 
+        echo $color[getRandom()];?>;">
         <?php
+        
+        $phrases = array("Don't shake me Lucifer", 
+                    "Night of the Vampire", 
+                    "I Walked with a Zombie", 
+                    "It's a Cold Night for Alligators", 
+                    "Creature With the Atom Brain",
+                    "Two Headed Dog");
+        echo "Roky Erickson Song of the Moment:<br/>";
+        echo $phrases[getRandom()], "<br/>";
         // put code for week 1 here
 
 	//A.
@@ -207,7 +219,15 @@ and open the template in the editor.
 
 
 	//E. 
-	//No idea if this works or not, I can't really test right now because my environment isn't set up properly
+        function token() {	
+            return sha1( uniqid(mt_rand(), true) );
+        }
+
+        
+        
+        
+        date_default_timezone_set('America/New_York');
+        
         echo "<br/><br/><br/>";
 	$rows = 100; // define number of rows
 	$cols = 1;// define number of columns
@@ -224,16 +244,24 @@ and open the template in the editor.
 			echo "<tr bgcolor=#FFFFFF>";
 		}
 	        for($td=1;$td<=$cols;$td++){
-		//This didn't work for me and I can't test it properly...
-		//$date = new DateTime('2013-01-01', new DateTimeZone('America/New_York'));
-                //This works but it's an associative array and the key values are not posted. I'll fix it later.
-		$date = \time();
-	        echo "<td>row: ",$tr, $date, "</td>"; 
+		$today = date("F j, Y, g:i:s:ms a");
+	        echo "<td>Row #", $tr, " ", $today, "<br/>Unique ID: ", token(), "</td>"; 
 	        } 
 	    echo "</tr>"; 
 	} 
 	 
-	echo "</table>"; 
+	echo "</table>";
+        
+        
+        //F.
+        
+        function getRandom()
+        {
+           return rand(0, 5); 
+        }
+        
+        
+        
         ?>
     </body>
 </html>
