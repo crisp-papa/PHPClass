@@ -27,12 +27,8 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-            include 'Config.php';
-            include 'Validator.php';
+            include 'dependency.php';
             
-            session_start();
-            //Regenerate session
-            session_regenerate_id(true);
             
             $token = uniqid();
             

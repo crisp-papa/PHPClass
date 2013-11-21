@@ -1,7 +1,6 @@
 <?php
 
-include 'Config.php';
-include 'Validator.php';
+include 'dependency.php';
 
 $db = new PDO(Config::DB_DNS, Config::DB_USER, Config::DB_PASSWORD);
 

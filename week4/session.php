@@ -8,9 +8,7 @@
     <body>
         <?php
         //Required whenever you wish to start a new session
-        session_start();
-        
-        include 'Config.php';
+        include 'dependency.php';
         
         //If session counter is not set...
         if ( !isset($_SESSION["counter"]) ){
@@ -28,12 +26,14 @@
         echo session_id(), "<br />";
         echo $_SESSION["counter"];
         
-        if( isset($_SESSION["maxlife"]) && $_SESSION["maxlife"] > (time() - Config::MAX_SESSION_TIME)){
+        if( isset($_SESSION["maxlife"]) && $_SESSION["maxlife"] < (time() - Config::MAX_SESSION_TIME)){
             echo "Sorry, you timed out! You must login again.";
             session_destroy(); 
         } else {
             $_SESSION["maxlife"] = (time() + Config::MAX_SESSION_TIME);
         }
+        
+        echo time();
         
         
         

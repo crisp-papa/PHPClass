@@ -11,11 +11,10 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        
-        session_start();
-        
-        include 'Validator.php';
-        include 'Config.php';
+       
+        include 'dependency.php';
+        //include 'Validator.php';
+        //include 'Config.php';
         /*
         $db = new PDO(Config::DB_DNS, Config::DB_USER, Config::DB_PASSWORD);
         $stmt = $db->prepare('SELECT * FROM week3');
@@ -27,13 +26,13 @@ and open the template in the editor.
         */
         //$valObj = new Validator();
         
-        $testEmail = "testemail@test.net";
+        $testEmail = "test@emailtest.net";
         
         if (Validator::emailIsValid($testEmail) ) 
         {
-            echo "Email is valid";
+            echo "Email is valid <br/>";
         } else {
-            echo "Email is <strong>NOT</strong> valid.";
+            echo "Email is <strong>NOT</strong> valid. <br/>";
         }
         
         $db = new PDO(Config::DB_DNS, Config::DB_USER, Config::DB_PASSWORD);
