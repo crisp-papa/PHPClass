@@ -34,6 +34,7 @@ and open the template in the editor.
         
         if ( !empty($successMessage) ) {
             echo "<p>", $successMessage, "</p>";
+            header("Location:login.php");
         }
         ?>
         <div id="wrapper">

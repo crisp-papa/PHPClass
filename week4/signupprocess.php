@@ -35,7 +35,9 @@ if( Validator::usernameIsValid($username)
             //If there is a PDO exception, print Database error
             echo "Database Error";
         }
+        
     } 
+    
 
 include 'signup.php';
 
