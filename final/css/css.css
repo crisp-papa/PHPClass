@@ -1,0 +1,158 @@
+img
+{
+	width:500px;
+	height:350px;
+	padding:5px;
+}
+
+body
+{
+	background-color: #444444;
+}
+
+p
+{
+	padding:10px;
+	/*position:absolute;*/
+}
+
+a
+{
+	background-color: #444444;
+	color: #ffdddd;
+	display:block;
+	line-height:50px;
+	margin:auto;
+	text-align:center;
+	width:160px;
+}
+
+a:hover
+{
+	background-color: #ffdddd;
+	color: #444444;
+}
+
+#contentLeft
+{
+	color:#dddddd;
+	width:800px;
+}
+
+.listText
+{
+	color:darkgrey;
+}
+
+#header
+{	
+	color:#cc9988;
+	height:50px;
+	line-height:auto;
+	text-align:center;
+}
+
+#mainContent
+{
+	float:left;
+	height:960px;
+	margin:5px;
+	width:800px;
+}
+
+#sidebar
+{
+	margin-left:5px;
+	margin-right:5px;
+	background-color:#4C2F3C;
+	float:right;
+	width:160px;
+}
+
+#mainWrapper
+{
+	width:960px;
+	height:auto;
+	margin-left:auto;
+	margin-right:auto;
+	clear:both;
+}
+
+#skaterSit
+{
+	float:left;
+}
+
+#skaterRide
+{
+	float:right;
+}
+
+/*For list.html*/
+table
+{
+	table-layout:fixed;
+    border:10px;
+    border-style:ridge;
+    border-color:#dddddd;
+	
+	border-top: 10px ridge #dddddd;
+}
+
+th, td
+{
+    padding:5px;
+    border:1px;
+    border-style:solid;
+}
+
+thead
+{
+	background-color:#dddddd;
+}
+
+tfoot
+{	
+	background-color:#aa9999;
+	font-weight:bold;
+	text-align:center;
+	text-decoration: underline;
+}
+
+
+#tableCaption
+{
+	border:10px ridge #dddddd;
+	border-bottom:none;
+}
+
+
+#carList
+{
+	
+}
+
+#fruitList
+{
+	
+}
+
+#computerList
+{
+	
+}
+
+#tableExample
+{
+	float:left;
+}
+
+#tableColumn
+{
+	background-color:#aa9988;
+}
+
+#cooldog
+{
+	float:left;
+}

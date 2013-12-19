@@ -16,23 +16,29 @@ if( Validator::usernameIsValid($website)
  && Validator::passwordIsValid($password))
     {
         try
-        {
-            $stmt = $db->prepare('INSERT INTO USERS SET username = :formWebsite, email = :formEmail, password = :formPassword');
-            //, active = :active
-            //$active = 1;
+        {                                 
+            $stmt = $db->prepare('INSERT INTO USERS SET website = :formWebsite, email = :formEmail, password = :formPassword');
             $password = sha1($password);
             $stmt->bindParam(':formWebsite', $website, PDO::PARAM_STR);
             $stmt->bindParam(':formEmail', $email, PDO::PARAM_STR);
             $stmt->bindParam(':formPassword', $password, PDO::PARAM_STR);
             //$stmt->bindParam(':active', $active, PDO::PARAM_INT);
             //Executes all of the above code within the try
-            if ( $stmt->execute()){
-                $successMessage =  "<h3>Info submitted</h3>";
-            } else {
+            if ( $stmt->execute())
+            {
+                $_SESSION['email'] = $email;
+                $dbdata = new DBData;
+                $dbdata->addDefault();
+                $successMessage = "Good job.";
+            } 
+            else 
+            {
                 $errorMessage = "<h3>Info <strong>NOT</strong> submitted</h3>";
                 print_r($_POST);
             }
-        } catch (PDOException $e) {
+        } 
+        catch (PDOException $e) 
+        {
             //If there is a PDO exception, print Database error
             echo "Database Error";
         }
